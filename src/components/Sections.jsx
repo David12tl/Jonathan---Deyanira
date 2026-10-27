@@ -4,6 +4,7 @@ import confetti from 'canvas-confetti';
 import { MapPin, Church, CalendarPlus, Navigation } from 'lucide-react';
 import { C, EVENT, WHATSAPP_NUMBER } from '../config';
 import { ScrollReveal, RevealWords, GoldDivider, Countdown } from './UI';
+
 // Assets: copia la carpeta flores en public/flores.
 // Cada ramo utiliza las seis imágenes originales con su transparencia intacta.
 const FLORAL_ASSETS = '/';
@@ -34,6 +35,7 @@ const BOUQUETS = {
     { file: 'flor.png', x: 52, y: 69, w: 19, rotation: -15, z: 4 },
   ],
 };
+
 const FloralCorner = ({ className = '', onDark = false, variant = 'corner' }) => {
   const reduce = useReducedMotion();
   const pieces = BOUQUETS[variant] || BOUQUETS.corner;
@@ -84,6 +86,7 @@ export const LoadingScreen = ({ onComplete }) => {
     </motion.div>
   );
 };
+
 export const Hero = () => {
   const reduce = useReducedMotion();
   const heroRef = useRef(null);
@@ -115,6 +118,7 @@ export const Hero = () => {
     </section>
   );
 };
+
 export const Message = () => (
   <section className="relative paper py-28 px-6 overflow-hidden">
     <FloralCorner variant="airy" className="bottom-0 left-0 w-40 md:w-64 scale-x-[-1]" />
@@ -134,6 +138,7 @@ export const Message = () => (
     </div>
   </section>
 );
+
 export const Details = () => {
   const fmt = (d) => d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
   const googleCalendar = `https://calendar.google.com/calendar/render?${new URLSearchParams({
@@ -191,6 +196,7 @@ export const Details = () => {
     </section>
   );
 };
+
 export const Closing = () => {
   const reduce = useReducedMotion();
   const celebrate = () => {
@@ -206,7 +212,7 @@ export const Closing = () => {
       <FloralCorner className="bottom-0 right-0 w-40 md:w-64" />
       <ScrollReveal className="relative z-10 flex flex-col items-center">
         <h2 className="font-script text-6xl md:text-8xl" style={{ color: C.wine }}>¡Te esperamos!</h2>
-        <p className="font-display italic text-xl md:text-2xl mt-4 text-stone-700">Tu presencia será nuestro mejor regalo</p>
+        <p className="font-display italic text-xl md:text-2xl mt-4 text-stone-700">Esperamos compartir este día tan especial contigo</p>
         {WHATSAPP_NUMBER && <div className="w-full max-w-sm mt-10 space-y-4 text-left font-display text-stone-800">
           <label className="block">Tu nombre<input value={guestName} onChange={e => setGuestName(e.target.value)} autoComplete="name" className="block w-full rounded border p-3 mt-1 text-stone-800 bg-white" style={{ borderColor: C.gold }} /></label>
           <label className="block">Número de asistentes<input type="number" min="1" step="1" value={guests} onChange={e => setGuests(Math.max(1, Math.floor(Number(e.target.value) || 1)))} className="block w-full rounded border p-3 mt-1 text-stone-800 bg-white" style={{ borderColor: C.gold }} /></label>
@@ -223,6 +229,7 @@ export const Closing = () => {
     </footer>
   );
 };
+
 // Ajusta objectPosition si el anillo o los rostros necesitan otro encuadre.
 export const PhotoSection = ({ src = '/Image.jpeg', alt = 'Anillo de compromiso', objectPosition = '50% 50%' }) => {
   const ref = useRef(null);
@@ -238,7 +245,7 @@ export const PhotoSection = ({ src = '/Image.jpeg', alt = 'Anillo de compromiso'
   return (
     <section ref={ref} className="relative paper overflow-hidden px-6 py-20 md:py-28" aria-label="Nuestro compromiso">
       <div className="relative max-w-3xl mx-auto">
-        <FloralCorner variant="photo" className="-bottom-12 -left-16 w-56 md:w-80 z-20 opacity-90" />
+        <FloralCorner variant="photo" className="-bottom-16 -left-32 md:-left-48 w-56 md:w-80 z-20 opacity-90" />
         <FloralCorner variant="airy" className="-top-12 -right-16 w-48 md:w-72 rotate-180 z-20 opacity-90" />
         <ScrollReveal className="relative z-10 mx-auto max-w-xl">
           <div className="relative p-3 md:p-4" style={{ border: `1px solid ${C.gold}`, borderRadius: '48% 48% 8px 8px / 32% 32% 8px 8px', background: C.ivory }}>
