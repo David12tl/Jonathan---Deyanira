@@ -128,7 +128,7 @@ export const Message = () => (
       <GoldDivider />
       <ScrollReveal><p className="font-display text-xl md:text-2xl mb-10" style={{ color: C.wine }}>Con la bendición de Dios y de nuestros padres</p></ScrollReveal>
       <div className="grid md:grid-cols-[1fr_auto_1fr] gap-8 md:gap-10 items-center font-display text-xl md:text-2xl text-stone-800">
-        <ScrollReveal className="space-y-1"><p>Severo Julián</p><p>Yolanda Manuel</p></ScrollReveal>
+        <ScrollReveal className="space-y-1"><p>Severo Julian</p><p>Yolanda Manuel</p></ScrollReveal>
         <span className="hidden md:block w-px h-16 mx-auto" style={{ background: C.gold }} />
         <ScrollReveal className="space-y-1"><p>David G. Valdez</p><p>Virginia López</p></ScrollReveal>
       </div>
