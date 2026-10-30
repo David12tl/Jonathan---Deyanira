@@ -203,7 +203,7 @@ export const Closing = () => {
     if (reduce) return;
     confetti({ particleCount: 150, spread: 80, origin: { y: 0.7 }, colors: [C.wine, C.gold, '#ffffff', C.blush] });
   };
-  const [guestName, setGuestName] = useState('');
+  const [guestName, setGuestName] = useState('Julian');
   const [guests, setGuests] = useState(1);
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`¡Hola! Soy ${guestName.trim()}. Confirmo mi asistencia a la boda de Jonathan y Deyanira. Asistentes: ${guests}.`)}`;
   return (
@@ -224,7 +224,7 @@ export const Closing = () => {
           )}
           <button onClick={celebrate} className="invite-action border px-8 py-3 font-display text-xl transition-colors">Celebrar con nosotros</button>
         </div>
-        <p className="font-script text-3xl mt-16" style={{ color: C.wine }}>Jonathan & Deyanira</p>
+        <p className="font-script text-3xl mt-16 mb-24 md:mb-0 relative z-20" style={{ color: C.wine }}>Jonathan & Deyanira</p>
       </ScrollReveal>
     </footer>
   );
