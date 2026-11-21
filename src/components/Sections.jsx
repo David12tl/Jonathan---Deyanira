@@ -27,12 +27,12 @@ const BOUQUETS = {
     { file: 'flor_2.png', x: 47, y: 62, w: 26, rotation: 26, z: 5 },
   ],
   airy: [
-    { file: 'tallo_3.png', x: 10, y: 16, w: 21, rotation: -16, z: 1 },
-    { file: 'tallo.png', x: 32, y: 8, w: 21, rotation: 14, z: 1 },
-    { file: 'tallo_2.png', x: 51, y: 31, w: 19, rotation: 48, z: 1 },
-    { file: 'flor_3.png', x: 11, y: 62, w: 74, rotation: -12, z: 2 },
-    { file: 'flor_2.png', x: 28, y: 56, w: 27, rotation: 12, z: 3 },
-    { file: 'flor.png', x: 52, y: 69, w: 19, rotation: -15, z: 4 },
+    { file: 'tallo_3.png', x: 10, y: 4, w: 21, rotation: -16, z: 1 },
+    { file: 'tallo.png', x: 32, y: 2, w: 21, rotation: 14, z: 1 },
+    { file: 'tallo_2.png', x: 51, y: 12, w: 19, rotation: 48, z: 1 },
+    { file: 'flor_3.png', x: 11, y: 30, w: 74, rotation: -12, z: 2 },
+    { file: 'flor_2.png', x: 28, y: 28, w: 27, rotation: 12, z: 3 },
+    { file: 'flor.png', x: 52, y: 35, w: 19, rotation: -15, z: 4 },
   ],
 };
 
@@ -121,7 +121,7 @@ export const Hero = () => {
 
 export const Message = () => (
   <section className="relative paper py-28 px-6 overflow-hidden">
-    <FloralCorner variant="airy" className="bottom-0 left-0 w-40 md:w-64 scale-x-[-1]" />
+    <FloralCorner variant="airy" className="top-0 left-0 w-40 md:w-64 scale-x-[-1]" />
     <div className="relative z-10 max-w-2xl mx-auto text-center">
       <RevealWords text="“En esto consiste el amor: no en que nosotros hayamos amado a Dios, sino en que él nos amó a nosotros.”" className="font-display italic text-2xl md:text-4xl leading-relaxed text-stone-700" />
       <RevealWords text="1 Juan 4:10" delay={0.6} className="font-display font-semibold text-lg md:text-xl mt-5" />

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { GlobalStyles } from './components/UI';
 import { LoadingScreen, Hero, PhotoSection, Message, Details, Closing } from './components/Sections';
+import AudioPlayer from './components/AudioPlayer';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -25,6 +26,7 @@ export default function App() {
           <Closing />
         </motion.main>
       )}
+      <AudioPlayer />
     </>
   );
 }
