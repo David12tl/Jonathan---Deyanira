@@ -121,7 +121,7 @@ export const Hero = () => {
 
 export const Message = () => (
   <section className="relative paper py-28 px-6 overflow-hidden">
-    <FloralCorner variant="airy" className="top-0 left-0 w-40 md:w-64 scale-x-[-1]" />
+    <FloralCorner variant="airy" className="top-0 left-0 w-40 md:w-64 scale-x-[-1] md:hidden" />
     <div className="relative z-10 max-w-2xl mx-auto text-center">
       <RevealWords text="“En esto consiste el amor: no en que nosotros hayamos amado a Dios, sino en que él nos amó a nosotros.”" className="font-display italic text-2xl md:text-4xl leading-relaxed text-stone-700" />
       <RevealWords text="1 Juan 4:10" delay={0.6} className="font-display font-semibold text-lg md:text-xl mt-5" />
