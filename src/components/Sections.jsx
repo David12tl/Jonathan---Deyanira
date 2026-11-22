@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { MapPin, Church, CalendarPlus, Navigation } from 'lucide-react';
+import { MapPin, Building, CalendarPlus, Navigation } from 'lucide-react';
 import { C, EVENT, WHATSAPP_NUMBER } from '../config';
 import { ScrollReveal, RevealWords, GoldDivider, Countdown } from './UI';
 
@@ -170,7 +170,7 @@ export const Details = () => {
         <p className="font-display text-2xl mt-6">Sábado 26 de diciembre de 2026</p></ScrollReveal>
         <div className="grid md:grid-cols-2 gap-6 mt-10">
           {[
-            { title: 'Unión Civil', icon: Church, place: EVENT.civilUnion.place, time: '2pm', address: '', href: '' },
+            { title: 'Unión Civil', icon: Building, place: EVENT.civilUnion.place, time: 'lunes 21 de diciembre de 2026 a las 2 de la tarde', address: '', href: '' },
             { title: 'Ceremonia', icon: Church, place: EVENT.ceremonyPlace, time: '12:00 hrs', address: '', href: ceremonyMap },
             { title: 'Recepción', icon: MapPin, place: EVENT.receptionLine1, time: EVENT.receptionTime, address: EVENT.receptionLine2, href: EVENT.receptionMapsUrl || mapsUrl },
           ].map(({ title, icon: Icon, place, time, address, href }) => (
@@ -184,6 +184,7 @@ export const Details = () => {
             </article></ScrollReveal>
           ))}
         </div>
+<p className="font-display text-stone-800 mt-2">Ceremonia religiosa: 26 de diciembre de 2026 (sábado)</p>
         <ScrollReveal className="mt-12">
           <h3 className="font-display text-2xl" style={{ color: C.wine }}>Reserva este día para nosotros</h3>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
