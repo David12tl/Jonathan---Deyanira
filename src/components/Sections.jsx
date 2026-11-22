@@ -246,8 +246,8 @@ export const PhotoSection = ({ src = '/Image.jpeg', alt = 'Anillo de compromiso'
   return (
     <section ref={ref} className="relative paper overflow-hidden px-6 py-20 md:py-28" aria-label="Nuestro compromiso">
       <div className="relative max-w-3xl mx-auto">
-        <FloralCorner variant="photo" className="-bottom-16 -left-32 md:-left-48 w-56 md:w-80 z-20 opacity-90" />
-        <FloralCorner variant="airy" className="-top-12 -right-16 w-48 md:w-72 rotate-180 z-20 opacity-90" />
+        <FloralCorner variant="photo" className="-bottom-20 -left-40 md:-left-64 w-56 md:w-80 z-20 opacity-90" />
+        <FloralCorner variant="airy" className="-top-20 -right-24 md:-right-48 w-48 md:w-72 rotate-180 z-20 opacity-90" />
         <ScrollReveal className="relative z-10 mx-auto max-w-xl">
           <div className="relative p-3 md:p-4" style={{ border: `1px solid ${C.gold}`, borderRadius: '48% 48% 8px 8px / 32% 32% 8px 8px', background: C.ivory }}>
             <figure className="relative m-0 overflow-hidden" style={{ aspectRatio: '4 / 5', borderRadius: '48% 48% 4px 4px / 32% 32% 4px 4px', background: '#EDE4D7', boxShadow: '0 16px 45px -25px rgba(69,20,30,.3)' }}>
