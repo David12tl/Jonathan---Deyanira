@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { MapPin, Building, CalendarPlus, Navigation } from 'lucide-react';
+import { MapPin, Building, CalendarPlus, Navigation, Church } from 'lucide-react';
 import { C, EVENT, WHATSAPP_NUMBER } from '../config';
 import { ScrollReveal, RevealWords, GoldDivider, Countdown } from './UI';
 
