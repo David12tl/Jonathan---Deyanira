@@ -171,7 +171,7 @@ export const Details = () => {
         <div className="grid md:grid-cols-2 gap-6 mt-10">
           {[
             { title: 'Unión Civil', icon: Building, place: EVENT.civilUnion.place, time: 'lunes 21 de diciembre de 2026 a las 2 de la tarde', address: '', href: '' },
-            { title: 'Ceremonia', icon: Church, place: EVENT.ceremonyPlace, time: '12:00 hrs', address: '', href: ceremonyMap },
+            { title: 'Ceremonia', icon: Church, place: EVENT.ceremonyPlace, time: 'Sabado 26 de Diciembre 12:00 hrs', address: '', href: ceremonyMap },
             { title: 'Recepción', icon: MapPin, place: EVENT.receptionLine1, time: EVENT.receptionTime, address: EVENT.receptionLine2, href: EVENT.receptionMapsUrl || mapsUrl },
           ].map(({ title, icon: Icon, place, time, address, href }) => (
             <ScrollReveal key={title} className="h-full"><article className="relative border bg-white px-6 py-10 flex flex-col items-center" style={{ borderColor: C.gold }}>
