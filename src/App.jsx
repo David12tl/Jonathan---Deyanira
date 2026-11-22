@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { GlobalStyles } from './components/UI';
 import { LoadingScreen, Hero, PhotoSection, Message, Details, Closing } from './components/Sections';
@@ -6,11 +6,23 @@ import AudioPlayer from './components/AudioPlayer';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
+  const audioPlayerRef = useRef(null);
+
+  const handleOpenEnvelope = () => {
+    audioPlayerRef.current?.playAudio();
+  };
 
   return (
     <>
       <GlobalStyles />
-      <AnimatePresence>{loading && <LoadingScreen onComplete={() => setLoading(false)} />}</AnimatePresence>
+      <AnimatePresence>
+        {loading && (
+          <LoadingScreen
+            onOpen={handleOpenEnvelope}
+            onComplete={() => setLoading(false)}
+          />
+        )}
+      </AnimatePresence>
 
       {!loading && (
         <motion.main
@@ -26,7 +38,7 @@ export default function App() {
           <Closing />
         </motion.main>
       )}
-      <AudioPlayer autoPlay />
+      <AudioPlayer ref={audioPlayerRef} autoPlay showControl={!loading} />
     </>
   );
 }

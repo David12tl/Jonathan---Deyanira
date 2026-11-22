@@ -59,7 +59,7 @@ const FloralCorner = ({ className = '', onDark = false, variant = 'corner' }) =>
   );
 };
 
-export const LoadingScreen = ({ onComplete }) => {
+export const LoadingScreen = ({ onComplete, onOpen }) => {
   const [opening, setOpening] = useState(false);
   const reduce = useReducedMotion();
   useEffect(() => {
@@ -67,11 +67,18 @@ export const LoadingScreen = ({ onComplete }) => {
     const id = window.setTimeout(onComplete, reduce ? 0 : 1350);
     return () => window.clearTimeout(id);
   }, [opening, onComplete, reduce]);
+
+  const handleOpen = () => {
+    if (opening) return;
+    onOpen?.();
+    setOpening(true);
+  };
+
   return (
     <motion.div className="fixed inset-0 z-50 wine-bg flex items-center justify-center px-6" exit={{ opacity: 0 }} transition={{ duration: reduce ? 0 : .6 }}>
       <div className="w-full max-w-md text-center">
         <p className="font-display uppercase tracking-[.25em] text-sm mb-10" style={{ color: C.goldSoft }}>Una invitación para ti</p>
-        <button type="button" aria-label="Abrir invitación de Jonathan y Deyanira" disabled={opening} onClick={() => setOpening(true)} className="relative block w-full h-60 rounded-md shadow-2xl" style={{ perspective: 1000, background: C.ivory }}>
+        <button type="button" aria-label="Abrir invitación de Jonathan y Deyanira" disabled={opening} onClick={handleOpen} className="relative block w-full h-60 rounded-md shadow-2xl" style={{ perspective: 1000, background: C.ivory }}>
           <motion.div className="absolute inset-x-8 top-5 bottom-5 rounded border flex flex-col items-center justify-center" style={{ background: C.ivory, borderColor: C.gold }} animate={opening ? { y: reduce ? 0 : -90, opacity: 0 } : { y: 0, opacity: 1 }} transition={{ delay: .5, duration: .7 }}>
             <span className="font-script text-4xl" style={{ color: C.wine }}>Jonathan & Deyanira</span>
             <span className="font-display mt-3" style={{ color: C.wine }}>26 · 12 · 2026</span>
