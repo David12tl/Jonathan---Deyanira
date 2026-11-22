@@ -9,6 +9,10 @@ export const EVENT = {
   ceremonyPlace: 'Iglesia Bautista Shalom',
   receptionLine1: 'Av. Porfirio Díaz',
   receptionLine2: 'Entre calles 16 de Septiembre y Benito Juárez, Arroyo Limón, Tux. Oax.',
+  civilUnion: {
+    date: new Date('2026-12-21T14:00:00-06:00'),
+    place: 'Salón "Los Girasoles" Av. Madero entre calles Zaragoza & Justo Sierra',
+  },
 };
 
 export const WHATSAPP_NUMBER = EVENT.whatsappNumber;

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 const AudioPlayer = () => {
   useEffect(() => {
     const audio = new Audio('/music/Rondalla Cristiana de Monterrey - Tiempo de Nuestro Amor (mp3cut.net).m4a');
+    audio.loop = true; // Set to loop continuously
     const play = () => {
       audio.play().catch(() => {
         // Auto-play may be blocked by the browser until user interaction

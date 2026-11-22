@@ -170,6 +170,7 @@ export const Details = () => {
         <p className="font-display text-2xl mt-6">Sábado 26 de diciembre de 2026</p></ScrollReveal>
         <div className="grid md:grid-cols-2 gap-6 mt-10">
           {[
+            { title: 'Unión Civil', icon: Church, place: EVENT.civilUnion.place, time: '2pm', address: '', href: '' },
             { title: 'Ceremonia', icon: Church, place: EVENT.ceremonyPlace, time: '12:00 hrs', address: '', href: ceremonyMap },
             { title: 'Recepción', icon: MapPin, place: EVENT.receptionLine1, time: EVENT.receptionTime, address: EVENT.receptionLine2, href: EVENT.receptionMapsUrl || mapsUrl },
           ].map(({ title, icon: Icon, place, time, address, href }) => (
