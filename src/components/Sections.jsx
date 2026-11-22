@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { MapPin, Building, CalendarPlus, Navigation, Church } from 'lucide-react';
+import { MapPin, Building, Church, CalendarPlus, Navigation } from 'lucide-react';
 import { C, EVENT, WHATSAPP_NUMBER } from '../config';
 import { ScrollReveal, RevealWords, GoldDivider, Countdown } from './UI';
 
@@ -167,7 +167,7 @@ export const Details = () => {
     <section className="paper px-6 py-20 md:py-28" aria-labelledby="details-title">
       <div className="max-w-5xl mx-auto text-center">
         <ScrollReveal><h2 id="details-title" className="font-script text-5xl md:text-7xl" style={{ color: C.wine }}>Dónde y cuándo</h2>
-        <p className="font-display text-2xl mt-6">Sábado 26 de diciembre de 2026</p></ScrollReveal>
+        </ScrollReveal>
         <div className="grid md:grid-cols-2 gap-6 mt-10">
           {[
             { title: 'Unión Civil', icon: Building, place: EVENT.civilUnion.place, time: 'lunes 21 de diciembre de 2026 a las 2 de la tarde', address: '', href: '' },
@@ -184,7 +184,6 @@ export const Details = () => {
             </article></ScrollReveal>
           ))}
         </div>
-<p className="font-display text-stone-800 mt-2">Ceremonia religiosa: 26 de diciembre de 2026 (sábado)</p>
         <ScrollReveal className="mt-12">
           <h3 className="font-display text-2xl" style={{ color: C.wine }}>Reserva este día para nosotros</h3>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">

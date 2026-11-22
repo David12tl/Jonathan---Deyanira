@@ -26,7 +26,7 @@ export default function App() {
           <Closing />
         </motion.main>
       )}
-      <AudioPlayer />
+      <AudioPlayer autoPlay />
     </>
   );
 }

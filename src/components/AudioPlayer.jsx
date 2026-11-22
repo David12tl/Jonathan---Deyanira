@@ -1,24 +1,43 @@
 import { useEffect } from 'react';
 
-const AudioPlayer = () => {
+const AudioPlayer = ({ autoPlay = false }) => {
   useEffect(() => {
-    const audio = new Audio('/music/Rondalla Cristiana de Monterrey - Tiempo de Nuestro Amor (mp3cut.net).m4a');
-    const play = () => {
+    const audio = new Audio(`/music/Vamos bien- Majo y Dan (video oficial).mp3`);
+    
+    // Handle play after user interaction (required by browsers)
+    const handleUserInteraction = () => {
       audio.play().catch(() => {
-        // Auto-play may be blocked by the browser until user interaction
-        const listener = () => {
-          audio.play().removeEventListener('click', listener);
-        };
-        document.addEventListener('click', listener, { once: true });
+        // If still blocked, we can try again on next interaction
       });
+      document.removeEventListener('click', handleUserInteraction);
+      document.removeEventListener('touchstart', handleUserInteraction);
     };
-    // Wait for the component to be mounted and then play
-    setTimeout(play, 500);
+    
+    // Add listeners once (required by browsers for autoplay)
+    document.addEventListener('click', handleUserInteraction, { once: true });
+    document.addEventListener('touchstart', handleUserInteraction, { once: true });
+
+    // If autoPlay is enabled, try to play after a short delay
+    if (autoPlay) {
+      const tryPlay = () => {
+        audio.play().catch(() => {
+          // Browser blocked autoplay - user interaction required
+        });
+      };
+      const interval = setInterval(() => {
+        if (document.visibilityState === 'visible') {
+          tryPlay();
+          clearInterval(interval);
+        }
+      }, 100);
+      return () => clearInterval(interval);
+    }
+
     return () => {
       audio.pause();
       audio.currentTime = 0;
     };
-  }, []);
+  }, [autoPlay]);
 
   return null;
 };
